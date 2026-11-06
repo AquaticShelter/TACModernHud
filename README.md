@@ -1,6 +1,6 @@
 # Modern HUD
 
-A HUD for Minecraft Forge 1.20.1 with a military-shooter look. It adds no items, blocks or ores.
+A ModernWarfare ish hudding mod
 
 Needs Forge 47+ and [YetAnotherConfigLib](https://modrinth.com/mod/yacl) 3.6+ (client).
 The mod is optional on either side of a connection: players without it can join a server that has it, and the other way round.
