@@ -1,0 +1,93 @@
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+}
+
+version = '1.7.0'
+group = 'cc.xypp.modernhud'
+
+base {
+    archivesName = 'modernhud-Stable'
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
+// No access transformer needed: this mod has no mixins and touches no
+// private vanilla fields/methods.
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                modernhud {
+                    source sourceSets.main
+                }
+            }
+        }
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                modernhud {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+repositories {
+    maven {
+        url = 'https://cursemaven.com'
+        content { includeGroup 'curse.maven' }
+    }
+    maven {
+        name = 'Xander Maven'
+        url = 'https://maven.isxander.dev/releases'
+        content { includeGroup 'dev.isxander' }
+    }
+    mavenCentral()
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.2.20'
+
+    // TACZ binary, compileOnly and WITHOUT fg.deobf: we only reference TACZ's own unobfuscated
+    // API (com.tacz.* — GunShootEvent, IGun) with vanilla types in signatures, so javac resolves
+    // against the raw CurseForge jar. Gun detection is a soft runtime dependency.
+    compileOnly 'curse.maven:timeless-and-classics-zero-1028108:8055552'
+
+    // YetAnotherConfigLib (YACL) powers the in-game config screen. Required at runtime on the client (mods.toml).
+    compileOnly fg.deobf('dev.isxander:yet-another-config-lib:3.6.6+1.20.1-forge')
+    runtimeOnly fg.deobf('dev.isxander:yet-another-config-lib:3.6.6+1.20.1-forge')
+}
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('META-INF/mods.toml') {
+        expand 'version': project.version
+    }
+}
+
+jar {
+    manifest {
+        attributes([
+            'Specification-Title'   : 'modernhud',
+            'Specification-Vendor'  : 'modernhud',
+            'Specification-Version' : '1',
+            'Implementation-Title'  : project.name,
+            'Implementation-Version': project.version,
+            'Implementation-Vendor' : 'modernhud',
+            // optional TACZ gunfire -> compass bridge (a no-op when TACZ is absent: the config is "required": false)
+            'MixinConfigs'          : 'modernhud.mixins.json'
+        ])
+    }
+}

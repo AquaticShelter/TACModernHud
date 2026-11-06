@@ -1,0 +1,104 @@
+{
+  "absorption_break": {
+    "subtitle": "subtitles.modernhud.absorption_break",
+    "sounds": [
+      "modernhud:break"
+    ]
+  },
+  "armor_hit": {
+    "subtitle": "subtitles.modernhud.armor_hit",
+    "sounds": [
+      "modernhud:armor_hit"
+    ]
+  },
+  "hit": {
+    "subtitle": "subtitles.modernhud.hit",
+    "sounds": [
+      {
+        "name": "modernhud:hit",
+        "stream": false
+      }
+    ]
+  },
+  "hit_2": {
+    "subtitle": "subtitles.modernhud.hit",
+    "sounds": [
+      {
+        "name": "modernhud:hit_2",
+        "stream": false
+      }
+    ]
+  },
+  "hit_3": {
+    "subtitle": "subtitles.modernhud.hit",
+    "sounds": [
+      {
+        "name": "modernhud:hit_3",
+        "stream": false
+      }
+    ]
+  },
+  "kill": {
+    "subtitle": "subtitles.modernhud.kill",
+    "sounds": [
+      {
+        "name": "modernhud:kill",
+        "stream": false
+      }
+    ]
+  },
+  "kill_2": {
+    "subtitle": "subtitles.modernhud.kill",
+    "sounds": [
+      {
+        "name": "modernhud:kill_2",
+        "stream": false
+      }
+    ]
+  },
+  "kill_3": {
+    "subtitle": "subtitles.modernhud.kill",
+    "sounds": [
+      {
+        "name": "modernhud:kill_3",
+        "stream": false
+      }
+    ]
+  },
+  "headshot_kill": {
+    "subtitle": "subtitles.modernhud.headshot_kill",
+    "sounds": [
+      {
+        "name": "modernhud:headshot_kill",
+        "stream": false
+      }
+    ]
+  },
+  "headshot_kill_2": {
+    "subtitle": "subtitles.modernhud.headshot_kill",
+    "sounds": [
+      {
+        "name": "modernhud:headshot_kill_2",
+        "stream": false
+      }
+    ]
+  },
+  "headshot_kill_3": {
+    "subtitle": "subtitles.modernhud.headshot_kill",
+    "sounds": [
+      {
+        "name": "modernhud:headshot_kill_3",
+        "stream": false
+      }
+    ]
+  },
+  "absorption_break_3": {
+    "subtitle": "subtitles.modernhud.absorption_break",
+    "sounds": [
+      {
+        "name": "modernhud:break_3",
+        "stream": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+license = "MIT"
+
+[[mods]]
+modId = "modernhud"
+version = "${version}"
+displayName = "Modern HUD"
+authors = "Lanixius"
+# Works with the mod on the client only. Shield feedback for other entities and the
+# hit / kill sounds need the mod on the server as well.
+displayTest = "IGNORE_ALL_VERSION"
+description = '''
+A HUD for Forge 1.20.1 with a military-shooter look. It adds no items, blocks or ores.
+
+Player and team health with absorption bars, a weapon widget for TACZ (ammo, fire mode,
+secondary weapon, gear slots), a compass, killstreak and boss bars, hit direction arcs,
+and hit, kill and shield sounds. Optional support for TACZ, ModernLoadout, Modern Ping
+and SuperbWarfare.
+
+Settings: Mods > Modern HUD > Config. Changes show on the HUD while you edit them.
+'''
+
+[[dependencies.modernhud]]
+    modId = "forge"
+    mandatory = true
+    versionRange = "[47,)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.modernhud]]
+    modId = "minecraft"
+    mandatory = true
+    versionRange = "[1.20.1,1.21)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.modernhud]]
+    modId = "modernping"
+    mandatory = false
+    versionRange = "[1.0.0,)"
+    ordering = "AFTER"
+    side = "CLIENT"
+
+[[dependencies.modernhud]]
+    modId = "yet_another_config_lib_v3"
+    mandatory = true
+    versionRange = "[3.6.0,)"
+    ordering = "NONE"
+    side = "CLIENT"
+
+[[dependencies.modernhud]]
+    modId = "tacz"
+    mandatory = false
+    versionRange = "[1.0,)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.modernhud]]
+    modId = "mwloadout"
+    mandatory = false
+    versionRange = "[1.0,)"
+    ordering = "AFTER"
+    side = "CLIENT"
