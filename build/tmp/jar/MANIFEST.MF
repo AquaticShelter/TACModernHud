@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Specification-Title: modernhud
+Specification-Vendor: modernhud
+Specification-Version: 1
+Implementation-Title: modernhud
+Implementation-Version: 1.7.0
+Implementation-Vendor: modernhud
+MixinConfigs: modernhud.mixins.json
+

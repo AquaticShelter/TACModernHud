@@ -1,0 +1,12 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "cc.xypp.modernhud.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "TaczServerMessageSoundMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
